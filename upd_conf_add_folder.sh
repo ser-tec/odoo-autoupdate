@@ -6,9 +6,6 @@ cd $dir
 # Import the configuration file
 . autoupdate.conf
 
-# Setting the field separator
-IFS=','
-
 # Folder list
 # combine OCA_FOLDER and CUSTOM_FOLDERS into var_folders
 var_folders=("$OCA_FOLDER" "${CUSTOM_FOLDERS[@]}")
