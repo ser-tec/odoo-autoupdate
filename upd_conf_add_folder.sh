@@ -8,7 +8,15 @@ cd $dir
 
 # Folder list
 var_folders=("${CUSTOM_FOLDERS[@]}")
-variable_folders=$(ls -d $var_folders/* 2>/dev/null)$(ls -d $OCA_FOLDER/* 2>/dev/null)
+variable_folders=$(ls -d $var_folders/* 2>/dev/null)
+
+# Error checking
+if [ $? -ne 0 ]; then
+  echo "Error generating folder list" >&2
+  exit 1
+fi
+
+variable_folders2=$(ls -d $OCA_FOLDER/* 2>/dev/null)
 
 # Error checking
 if [ $? -ne 0 ]; then
@@ -17,7 +25,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Format the folder list
-formatted_folders=$(echo "$FIX_FOLDERS,$variable_folders" | tr '\n' ',')
+formatted_folders=$(echo "$FIX_FOLDERS,$variable_folders,$variable_folders2" | tr '\n' ',')
 
 # Remove the last comma
 formatted_folders=${formatted_folders%,}
