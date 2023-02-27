@@ -7,14 +7,10 @@ cd $dir
 . autoupdate.conf
 
 # Folder list
-var_folders=("${CUSTOM_FOLDERS[@]}")
-variable_folders=$(ls -d $var_folders/* 2>/dev/null)
+#var_folders=("${CUSTOM_FOLDERS[@]}")
+#variable_folders=$(ls -d $var_folders/* 2>/dev/null)
 
-# Error checking
-if [ $? -ne 0 ]; then
-  echo "Error generating folder list" >&2
-  exit 1
-fi
+variable_folders=${CUSTOM_FOLDERS[@]}
 
 variable_folders2=$(ls -d $OCA_FOLDER/* 2>/dev/null)
 
