@@ -1,5 +1,8 @@
 #!/bin/bash
 
+dir=$(dirname $0)
+cd $dir
+
 # Import the configuration file
 . autoupdate.conf
 
