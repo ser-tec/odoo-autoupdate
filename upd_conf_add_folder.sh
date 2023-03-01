@@ -20,8 +20,8 @@ if [ $? -ne 0 ]; then
 fi
 
 # Format the folder list
-FIX_FOLDERS=$(echo "$FIX_FOLDERS" | tr '\n' ',')
-variable_folders=$(echo "$variable_folders" | tr '\n' ',')
+FIX_FOLDERS=$(echo "$FIX_FOLDERS" | tr ' ' ',')
+variable_folders=$(echo "$variable_folders" | tr ' ' ',')
 variable_folders2=$(echo "$variable_folders2" | tr '\n' ',')
 formatted_folders="$FIX_FOLDERS,$variable_folders,$variable_folders2"
 
