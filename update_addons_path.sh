@@ -2,6 +2,7 @@
 
 dir=$(dirname $0)
 cd $dir
+echo $PWD
 
 # Import configuration file
 . update.conf
@@ -20,9 +21,10 @@ ALL_FOLDERS="$OTHER_FOLDERS,$GIT_ADDONS_FOLDERS,$DEFAULT_FOLDERS,$OCA_FOLDER"
 
 # remove possible comma error
 ALL_FOLDERS=$(echo "$ALL_FOLDERS" | tr -s ',')
-
+echo "sto per scrivere"
 # Write ALL_FOLDERS on update.conf for update_db.sh use
 sed -i "s|ALL_FOLDERS=.*|ALL_FOLDERS=$ALL_FOLDERS|" "update.conf"
+echo "scritto update.conf"
 
 # Error checking
 if [ $? -ne 0 ]; then
