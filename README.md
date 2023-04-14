@@ -10,7 +10,7 @@ you can use singly or toghether.
 ```update_git_folders.sh``` -> it update folders that can be update by git
 WARNING : 
 * THE SCRIPT DOESN'T MAKE A BACKUP
-* for the OCA update GitHub CLI must be installed and it is necessary to have done a first authentication with token
+* for the OCA update GitHub CLI must be installed 
 https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 
 ## Prerequisites 
@@ -28,6 +28,16 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && sudo apt update \
 && sudo apt install gh -y
 ```
+
+if you don't have a github account token
+```
+gh config set -h github.com git_protocol https
+```
+else 
+```
+gh auth login --with-token < mytoken.txt 
+```
+
 
 ## Installation
 
