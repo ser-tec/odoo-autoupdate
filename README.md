@@ -16,6 +16,7 @@ WARNING :
 ## Prerequisites 
 * ubuntu
 * odoo installed from source
+* odoo configuration file need to be modified with "# end addons" after addon_path list
 
 ## Installation
 
