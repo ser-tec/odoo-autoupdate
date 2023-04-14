@@ -8,7 +8,6 @@ These collection of scripts allows you to update odoo and all the addons contain
 ```update_db.sh``` -> it install dependencies and update the database<br/>
 ```update_git_folders.sh``` -> it update folders that can be update by git
 WARNING : 
-* DO NOT USE IN PRODUCTION DEPLOYMENT
 * THE SCRIPT DOESN'T MAKE A BACKUP
 * GH must be installed and it is necessary to have done a first authentication with token
 
