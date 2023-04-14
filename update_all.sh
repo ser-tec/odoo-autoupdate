@@ -60,7 +60,7 @@ su - $ODOO_USER -s /bin/bash $dir/update_odoo.sh
 echo --------------------
 echo Start Update addons list
 echo --------------------
-sudo $dir/auto_addons_path.sh
+sudo $dir/update_addons_path.sh
 
 # Update DB (AS ODOO USER)
 echo --------------------
@@ -75,3 +75,4 @@ if sudo /bin/systemctl start $ODOO_SERVICE.service; then
 else
   echo "Failed to start Odoo service"
 fi
+echo --------------------
