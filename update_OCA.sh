@@ -6,6 +6,10 @@ cd $dir
 # Import the configuration file
 . autoupdate.conf
 
+if [ ! -d $OCA_FOLDER ]; then
+    mkdir $OCA_FOLDER
+fi
+
 cd "$OCA_FOLDER/.."
 gh repo list OCA --limit $LIMIT | while read -r repo _; do
   if eval "$EXCLUDE_REPO"; then
