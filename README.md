@@ -10,8 +10,8 @@ you can use singly or toghether.
 ```update_git_folders.sh``` -> it update folders that can be update by git
 WARNING : 
 * THE SCRIPT DOESN'T MAKE A BACKUP
-* for the OCA update GH must be installed and it is necessary to have done a first authentication with token
-
+* for the OCA update GitHub CLI must be installed and it is necessary to have done a first authentication with token
+https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 
 ## Prerequisites 
 * ubuntu
