@@ -10,6 +10,7 @@ These collection of scripts allows you to update odoo and all the addons contain
 WARNING : 
 * DO NOT USE IN PRODUCTION DEPLOYMENT
 * THE SCRIPT DOESN'T MAKE A BACKUP
+* GH must be installed and it is necessary to have done a first authentication with token
 
 
 ## Prerequisites 
