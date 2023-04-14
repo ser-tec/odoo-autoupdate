@@ -19,10 +19,12 @@ GIT_ADDONS_FOLDERS=$(echo "$GIT_ADDONS_FOLDERS" | tr ' ' ',')
 OTHER_FOLDERS=$(echo "$OTHER_FOLDERS" | tr ' ' ',')
 ALL_FOLDERS="$OTHER_FOLDERS,$GIT_ADDONS_FOLDERS,$DEFAULT_FOLDERS,$OCA_FOLDER"
 
+echo $OCA_FOLDER
+
 # remove possible comma error
 ALL_FOLDERS=$(echo "$ALL_FOLDERS" | tr -s ',')
 
-echo $ALL_FOLDERS
+#echo $ALL_FOLDERS
 echo "sto per scrivere 1"
 # Write ALL_FOLDERS on update.conf for update_db.sh use
 sed -i "s|ALL_FOLDERS=.*|ALL_FOLDERS=$ALL_FOLDERS|" "update.conf"
