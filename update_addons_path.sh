@@ -21,15 +21,15 @@ ALL_FOLDERS="$OTHER_FOLDERS,$GIT_ADDONS_FOLDERS,$DEFAULT_FOLDERS,$OCA_FOLDER"
 # remove possible comma error
 ALL_FOLDERS=$(echo "$ALL_FOLDERS" | tr -s ',')
 
-# Write ALL_FOLDERS on autoupdate.conf for updateDB.sh use
-sed -i "s|ALL_FOLDERS=.*|ALL_FOLDERS=$ALL_FOLDERS|" "autoupdate.conf"
+# Write ALL_FOLDERS on update.conf for update_db.sh use
+sed -i "s|ALL_FOLDERS=.*|ALL_FOLDERS=$ALL_FOLDERS|" "update.conf"
 
 # Error checking
 if [ $? -ne 0 ]; then
   echo "Error writing file" >&2
   exit 1
 fi
-echo "The folder list was successfully written to the file autoupdate.conf"
+echo "The folder list was successfully written to the file update.conf"
 
 # rewrite variable for better readability
 ALL_FOLDERS=${ALL_FOLDERS//,/,\\n    }
@@ -46,4 +46,4 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "The folder list was successfully written to the file $ODOO_CONF"
+echo "The folders list was successfully written to the file $ODOO_CONF"
