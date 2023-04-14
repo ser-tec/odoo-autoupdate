@@ -58,7 +58,7 @@ su - $ODOO_USER -s /bin/bash $dir/update_odoo.sh
 
 # Update addons list on conf odoo (as super user )
 echo --------------------
-echo Start Update addons list
+echo Start Update $ODOO_CONF addons_path
 echo --------------------
 sudo $dir/update_addons_path.sh
 
