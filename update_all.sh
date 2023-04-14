@@ -42,7 +42,7 @@ fi
 echo --------------------
 echo Start Update OCA
 echo --------------------
-su - $ODOO_USER -s /bin/bash $dir/update_OCA.sh
+su - $ODOO_USER -s /bin/bash $dir/update_oca.sh
 
 # Update GIT_FOLDERS (AS ODOO USER)
 echo --------------------
@@ -66,7 +66,7 @@ sudo $dir/update_addons_path.sh
 echo --------------------
 echo Start Update DB
 echo --------------------
-su - $ODOO_USER -s /bin/bash $dir/update_DB.sh
+su - $ODOO_USER -s /bin/bash $dir/update_db.sh
 echo --------------------
 
 # Riavvio il servizio odoo (as super user )
