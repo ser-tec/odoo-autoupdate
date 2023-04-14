@@ -14,12 +14,12 @@ GIT_ADDONS_FOLDERS=${GIT_ADDONS_FOLDERS[@]}
 OTHER_FOLDERS=${OTHER_FOLDERS[@]}
 
 # Format the folders list
-OCA_FOLDER=$(echo "${OCA_FOLDER[*]}" | tr ' ' ',')
+OCA_FOLDER2=$(echo "$OCA_FOLDER" | tr ' ' ',')
 GIT_ADDONS_FOLDERS=$(echo "$GIT_ADDONS_FOLDERS" | tr ' ' ',')
 OTHER_FOLDERS=$(echo "$OTHER_FOLDERS" | tr ' ' ',')
 ALL_FOLDERS="$OTHER_FOLDERS,$GIT_ADDONS_FOLDERS,$DEFAULT_FOLDERS,$OCA_FOLDER"
 
-echo $OCA_FOLDER
+echo $OCA_FOLDER2
 
 # remove possible comma error
 ALL_FOLDERS=$(echo "$ALL_FOLDERS" | tr -s ',')
