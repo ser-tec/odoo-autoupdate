@@ -18,7 +18,7 @@ OTHER_FOLDERS=${OTHER_FOLDERS[@]}
 echo $OCA_FOLDER1
 echo "###"
 # Format the folders list
-OCA_FOLDER2=$(echo "$OCA_FOLDER1" | tr ' ' ',')
+OCA_FOLDER2=$(echo "$OCA_FOLDER1" | tr '\n' ',')
 GIT_ADDONS_FOLDERS=$(echo "$GIT_ADDONS_FOLDERS" | tr ' ' ',')
 OTHER_FOLDERS=$(echo "$OTHER_FOLDERS" | tr ' ' ',')
 ALL_FOLDERS="$OTHER_FOLDERS,$GIT_ADDONS_FOLDERS,$DEFAULT_FOLDERS,$OCA_FOLDER"
