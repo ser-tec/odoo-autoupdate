@@ -1,5 +1,6 @@
 # Odoo-autoupdate
 These collection of scripts allows you to update odoo and all the addons contained in OCA.
+you can use singly or toghether.
 
 ```update_all.sh``` -> it runs the other scripts in the right order. It Stop the odoo service during the update process and restart after finish<br/>
 ```update_oca.sh``` -> it download the new modules contained in the OCA repository and update the existing ones skipping those specified in the exclude_folder parameter.<br/>
@@ -9,7 +10,7 @@ These collection of scripts allows you to update odoo and all the addons contain
 ```update_git_folders.sh``` -> it update folders that can be update by git
 WARNING : 
 * THE SCRIPT DOESN'T MAKE A BACKUP
-* GH must be installed and it is necessary to have done a first authentication with token
+* for the OCA update GH must be installed and it is necessary to have done a first authentication with token
 
 
 ## Prerequisites 
