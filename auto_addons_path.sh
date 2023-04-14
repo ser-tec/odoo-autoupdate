@@ -4,7 +4,7 @@ dir=$(dirname $0)
 cd $dir
 
 # Import configuration file
-. autoupdate.conf
+. update.conf
 
 # Folders list
 DEFAULT_FOLDERS="$ODOO_PATH/addons,$ODOO_PATH/odoo/addons"
