@@ -4,7 +4,7 @@ dir=$(dirname $0)
 cd $dir
 
 # Import the configuration file
-. autoupdate.conf
+. update.conf
 
 cd $ODOO_PATH
 echo $PWD
