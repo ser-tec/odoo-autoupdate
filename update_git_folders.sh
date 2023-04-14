@@ -4,7 +4,7 @@ dir=$(dirname $0)
 cd $dir
 
 # Import the configuration file
-. autoupdate.conf
+. update.conf
 
 # loop through all folders in $GIT_ADDONS_FOLDERS
 for i in "${GIT_ADDONS_FOLDERS[@]}"
