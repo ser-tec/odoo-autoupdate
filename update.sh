@@ -14,7 +14,7 @@ dir=$(dirname $0)
 cd $dir
 
 # Import the configuration file
-. autoupdate.conf
+. update.conf
 
 # Create a log file and open it for writing
 log_file="$LOGFILE$(date +"%Y-%m-%d_%H-%M-%S").log"
