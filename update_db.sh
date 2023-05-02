@@ -55,6 +55,7 @@ for db in "${DB_NAME[@]}"; do
   else
     echo "DB error update: $db"
   fi
+done 
 
 # deactivate python virtual enviroment
 deactivate
