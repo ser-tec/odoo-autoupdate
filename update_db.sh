@@ -46,14 +46,15 @@ if [ "$SKIP_REQ" = "False" ]; then
   fi
 fi
 
-echo "$ODOO_PATH/odoo-bin -c $ODOO_CONF -d $DB_NAME -u all --stop-after-init"
-$ODOO_PATH/odoo-bin -c "$ODOO_CONF" -d "$DB_NAME" -u all --stop-after-init
+for db in "${DB_NAME[@]}"; do
+  echo "$ODOO_PATH/odoo-bin -c $ODOO_CONF -d $db -u all --stop-after-init"
+  $ODOO_PATH/odoo-bin -c "$ODOO_CONF" -d "$db" -u all --stop-after-init
 
-if [ $? = 0 ]; then 
-    echo "DB correctly update"
+  if [ $? = 0 ]; then
+    echo "DB correctly updated: $db"
   else
-    echo "DB error update"
-fi
+    echo "DB error update: $db"
+  fi
 
 # deactivate python virtual enviroment
 deactivate
