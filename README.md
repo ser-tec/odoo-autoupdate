@@ -49,8 +49,9 @@ $ sudo chmod u+x *.sh
 
 ## Settings
 
-Define your own parameters in autoupdate.conf
+Define your own parameters in update.conf
 ```
+$ cp update.example.conf update.conf
 $ nano update.conf
 ```
 
