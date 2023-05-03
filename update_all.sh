@@ -3,7 +3,7 @@
 # Script for update odoo and all the addons contained in OCA.
 # Author: Grando Giulio
 #-------------------------------------------------------------------------------
-# git clone https://github.com/ser-tec/odoo-autoupdate2.git
+# git clone https://github.com/ser-tec/odoo-autoupdate.git
 # makes the file executable:
 # sudo chmod +x autoupdate.sh
 # Execute the script to update Odoo:
