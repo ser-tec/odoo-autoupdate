@@ -1,5 +1,5 @@
 # Odoo-autoupdate
-These collection of scripts allows you to update odoo and all the addons contained in OCA.
+These collection of bash scripts allows you to update odoo and all the addons contained in OCA.
 you can use singly or toghether.
 
 ```update_all.sh``` -> it runs the other scripts in the right order. It Stop the odoo service during the update process and restart after finish<br/>
