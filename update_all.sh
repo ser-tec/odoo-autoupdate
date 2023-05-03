@@ -20,7 +20,7 @@ cd $dir
 log_file="$LOGFILE$(date +"%Y-%m-%d_%H-%M-%S").log"
 exec > >(tee -i $log_file)
 
-var_list=("ODOO_VERS" "ODOO_PATH" "ODOO_SERVICE" "ODOO_USER" "ODOO_CONF" "VENV" "DB_NAME" "LOGFILE" "OCA_FOLDER")
+var_list=("ODOO_VERS" "ODOO_PATH" "ODOO_SERVICE" "ODOO_USER" "ODOO_CONF" "VENV" "DB_NAME" "LOGFILE" "OCA_FOLDER" "UPDATE_DB")
 
     for var in "${var_list[@]}"
     do
@@ -66,7 +66,9 @@ sudo $dir/update_addons_path.sh
 echo --------------------
 echo Start Update DB
 echo --------------------
-su - $ODOO_USER -s /bin/bash $dir/update_db.sh
+if [ "$UPDATE_DB" = true ]; then
+  su - $ODOO_USER -s /bin/bash $dir/update_db.sh
+fi
 echo --------------------
 
 # Riavvio il servizio odoo (as super user )
