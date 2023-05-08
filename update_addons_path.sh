@@ -22,7 +22,7 @@ ALL_FOLDERS="$OTHER_FOLDERS,$GIT_ADDONS_FOLDERS,$DEFAULT_FOLDERS,$OCA_FOLDER"
 ALL_FOLDERS=$(echo "$ALL_FOLDERS" | tr -s ',')
 
 #echo $ALL_FOLDERS
-echo "sto per scrivere 1"
+echo "write on update.conf"
 # Write ALL_FOLDERS on update.conf for update_db.sh use
 sed -i "s|ALL_FOLDERS=.*|ALL_FOLDERS=$ALL_FOLDERS|" "update.conf"
 echo "scritto update.conf"
@@ -40,7 +40,7 @@ ALL_FOLDERS=${ALL_FOLDERS//,/,\\n    }
 # rewrite variable with end delimitator for future update
 ALL_FOLDERS+="\n# end addons"
 
-echo "sto per scrivere 2"
+echo "write on $ODOO_CONF"
 # Update the file specified in output_file
 sed -i '/addons_path = /,/# end addons/c\addons_path = '"$ALL_FOLDERS"'' "$ODOO_CONF"
 
