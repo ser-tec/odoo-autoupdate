@@ -20,6 +20,7 @@ ALL_FOLDERS="$OTHER_FOLDERS,$GIT_ADDONS_FOLDERS,$DEFAULT_FOLDERS,$OCA_FOLDER"
 
 # remove possible comma error
 ALL_FOLDERS=$(echo "$ALL_FOLDERS" | tr -s ',')
+ALL_FOLDERS=$(echo "$ALL_FOLDERS" | sed 's/^,//')
 
 #echo $ALL_FOLDERS
 echo "write on update.conf"
