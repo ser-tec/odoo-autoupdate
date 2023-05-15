@@ -30,6 +30,7 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 ```
 
 ```
+gh config set -h github.com git_protocol https
 gh auth login --with-token < mytoken.txt 
 ```
 
