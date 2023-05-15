@@ -29,11 +29,6 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && sudo apt install gh -y
 ```
 
-if you don't have a github account token
-```
-gh config set -h github.com git_protocol https
-```
-else 
 ```
 gh auth login --with-token < mytoken.txt 
 ```
