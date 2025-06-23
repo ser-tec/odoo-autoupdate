@@ -2,24 +2,36 @@
 
 dir=$(dirname $0)
 cd $dir
-
-# Import the configuration file
 . update.conf
 
-if [ ! -d $OCA_FOLDER ]; then
-    mkdir $OCA_FOLDER
-fi
+[ ! -d "$OCA_FOLDER" ] && mkdir -p "$OCA_FOLDER"
 
 cd "$OCA_FOLDER/.."
+
 gh repo list OCA --limit $LIMIT | while read -r repo _; do
   if eval "$EXCLUDE_REPO"; then
     echo "Skip $repo"
     continue
   fi
+
   echo "$repo"
-  gh repo clone "$repo" "$repo" -- --branch $ODOO_VERS --depth=1 || (
+
+  # Directory esistente?
+  if [ -d "$repo" ]; then
     cd "$repo"
-    git checkout || true
-    git pull
-  )
+    if [ -d .git ]; then
+      echo " > pulling updates"
+      git reset --hard HEAD
+      git clean -fd
+      git pull --rebase
+    else
+      echo " > not a git repo, removing and re-cloning"
+      cd ..
+      rm -rf "$repo"
+      gh repo clone "$repo" "$repo" -- --branch $ODOO_VERS --depth=1
+    fi
+  else
+    echo " > cloning repo"
+    gh repo clone "$repo" "$repo" -- --branch $ODOO_VERS --depth=1
+  fi
 done
